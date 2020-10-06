@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+function Food({name}){
+	return <h1>I like {name}</h1>;
+}
+
+const foodILike = [
+	{
+		name: "kimchi",
+		image: "김치"
+	},
+	{
+		name: "kimbap",
+		image: "김밥"
+	},
+  {
+    name: "cheese",
+    image: "치즈"
+  }
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {foodILike.map(dish => <Food name={dish.name} />)}
     </div>
   );
 }
